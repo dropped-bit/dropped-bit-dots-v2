@@ -301,16 +301,16 @@ main() {
     )
 
     local hypr_packages=(
-        # "hyprland"
-        # "hyprlock"
-        # "hypridle"
-        # "hyprpaper"
-        # "xdg-desktop-portal"
-        # "xdg-desktop-portal-hyprland"
-        # "xdg-desktop-portal-gtk" # for file chooser
-        # "cliphist" # clipboard manager
-        # "grim" # screenshots
-        # "slurp" # screenshots
+        "hyprland"
+        "hyprlock"
+        "hypridle"
+        "hyprpaper"
+        "xdg-desktop-portal"
+        "xdg-desktop-portal-hyprland"
+        "xdg-desktop-portal-gtk" # for file chooser
+        "cliphist" # clipboard manager
+        "grim" # screenshots
+        "slurp" # screenshots
         # "network-manager-applet"
         # "gvfs"
         # "blueman" # bluetooth
@@ -321,19 +321,19 @@ main() {
         # "thunar" # file manager
         # "kitty" # terminal
         # "firefox" # browser
-        # "waybar" # bar
-        # "rofi-wayland"
+        "waybar" # bar
+        "rofi-wayland"
         # "nwg-look" # set gtk themes
         # "libadwaita"
-        # "brightnessctl"
-        # "swaync" # notification center
+        "brightnessctl"
+        "swaync" # notification center
         # "gnome-bluetooth-3.0" # for ags bar
         # "libgtop" # required for resource monitoring modules
         # "dart-sass" # compiler for sass/scss
     )
 
     local yay_hypr_packages=(
-        # "hyprshot"
+        "hyprshot"
         # "aylurs-gtk-shell"
         # "kanata" # keyboard modifier
     )
@@ -374,8 +374,8 @@ main() {
     fi
 
     # Commented package arrays available for ad-hoc installation:
-    # install_pacman_packages "${hypr_packages[@]}"  # Uncomment for Hyprland
-    # install_yay_packages "${yay_hypr_packages[@]}"  # Uncomment for Hyprland AUR packages
+    install_pacman_packages "${hypr_packages[@]}"  # Uncomment for Hyprland
+    install_yay_packages "${yay_hypr_packages[@]}"  # Uncomment for Hyprland AUR packages
 
     log "=== Installing Flatpak Packages ==="
     install_flatpaks "${flatpak_packages[@]}"

@@ -3,7 +3,7 @@
     "position": "top", // Waybar position (top|bottom|left|right)
     // "width": 1280, // Waybar width
     // Choose the order of the modules
-    "modules-left": ["hyprland/workspaces", "hyprland/window"],
+    "modules-left": ["hyprland/workspaces", "wlr/taskbar"],
     "modules-center": ["custom/music",],
     "modules-right": ["tray","pulseaudio", "backlight", "battery", "clock"],
     "hyprland/workspaces": {
@@ -12,8 +12,7 @@
          "format": " {icon} ",
          "format-icons": {
              "default": "",
-         },
-     },
+         }, },
     "hyprland/workspaces": {
 	"active-only": false,
 	"disable-scroll": true,
@@ -30,7 +29,7 @@
 		"1": [],
 	 	"2": [],
 	 	"3" :[],
-	 	"4": []
+	 	"4": [],
 	 	}
      	},
 
@@ -38,13 +37,7 @@
 
     // Hyprland Window
     "hyprland/window": {
-        "rewrite": {
-            "(.*) - Brave": "$1",
-            "(.*) - Chromium": "$1",
-            "(.*) - Brave Search": "$1",
-            "(.*) - Outlook": "$1",
-            "(.*) Microsoft Teams": "$1"
-        },
+        "format": "{class}",
         "separate-outputs": true
     },
     "tray": {
@@ -95,6 +88,11 @@
             "default": ["", "", " "]
         },
         "on-click": "pavucontrol"
+    },
+    "custom/controlcenter": {
+        "tooltip": false,
+        "on-click": "ags -t sidebar",
+        "format": "󰣇 "
     },
     "custom/lock": {
         "tooltip": false,
