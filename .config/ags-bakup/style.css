@@ -1,0 +1,176 @@
+/* @import './simple-bar/style.css'; */
+/* @@import './control-center/style.css'; */
+
+@import url('./themes/catppuccin-frappe.css');
+
+* {
+    font-size: 14px;
+    font-family: "JetBrainsMono Nerd Font", sans-serif;
+    font-weight: normal;
+}
+
+/* CONTROL CENTER */
+.controlcenterbutton {
+    background-color: transparent;
+    font-size: 20px;
+    padding:0px 4px 0px 0px;
+    margin-right: 4px;
+    margin-left: 4px;
+    border-radius: 4px;
+}
+
+.controlcenterbutton:hover {
+    border: 1px solid @blue;
+    margin-right: 4px;
+    margin-left: 4px;
+}
+.sidebar {
+    background: @base;
+    /* padding: 100px; */
+    margin: 10 4px 0px 0px;
+    border-radius: 12px;
+    font-weight: bold;
+    border: 1px solid @mauve;
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+    padding:20px;
+}
+.sidebar-window {
+    background:transparent;
+}
+
+.group {
+    padding:10px;
+    background-color: @surface2;
+    border-radius: 10px;
+}
+
+.row {
+}
+
+.rowsmall {
+    padding-bottom: 4px;
+}
+
+.lastrow {
+    padding-top: 4px;
+}
+
+
+/* sets the circles for the CPU and RAM */
+.circularprocess {
+    min-width:100px;
+    min-height:100px;
+    padding: 10px 50px;
+    color:@mauve;
+    background-color: @base;
+}
+
+.circularlabel {
+    padding: 10px 50px 0px 50px;
+    font-weight: normal;
+}
+.os {
+    font-size: 42px;
+    padding: 1px 10px 1px 10px;
+}
+
+.greeting_box {
+    background-color: @overlay2;
+    border: 1px solid @mauve;
+    padding:1px 16px 1px 2px;
+    margin: 0px 4px;
+    border-radius: 6px;
+}
+.greeting_box_label {
+    min-width: 80px;
+    /* text-align: right; */
+    /* background-color: @overlay2; */
+    border: 1px solid @mauve;
+    padding:1px 6px 1px 70px;
+    margin: 0px 4px;
+    border-radius: 6px;
+}
+/* .greeting { */
+/*     margin-left: 100px;  */
+/* } */
+
+/* BAR */
+window.bar {
+    /* background: url("/home/holmes/wallpapers/stephan-raabe/liquid2.jpg"); */
+
+    /* background-size: 100%; */
+    /* margin: 0px 10px 500px 10px; */
+    background-color: @base;
+    color: @text;
+}
+
+button {
+    min-width: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin: 4px;
+    border: 1px solid transparent;
+    background-color: transparent;
+}
+
+button:active {
+    margin: 4px;
+    border: 1px solid transparent;
+    background-color: transparent;
+}
+
+button:hover {
+    margin: 4px;
+    border: 1px solid @peach;
+}
+
+label {
+    font-weight: bold;
+}
+
+icon {
+    margin: 0px;
+}
+
+.workspaces button.focused {
+    margin: 4px;
+    border: 1px solid @mauve;
+}
+
+.client-title {
+    margin: 2px 5px 2px 5px;
+    padding: 2px 5px 2px 5px;
+    min-width: 0px;
+    border-radius: 4px;
+    background-color: @surface2;
+    color: @text;
+}
+
+.notification {
+    color: @blue;
+}
+
+.clock {
+    padding: 0px 10px 0px 4px;
+}
+
+
+/* slider */
+highlight {
+    min-height: 10px;
+    background-color: @mauve; /*change color of slider*/
+}
+
+/* change battery bar */
+block.filled {
+    min-height: 10px;
+    /* min-width: 180px; */
+    /* min-width: 100%; */
+    background-color: @mauve;
+}
+
+/* empty part of battery bar */
+/* block.empty { */
+/*     background-color: @mauve; */
+/* } */
+

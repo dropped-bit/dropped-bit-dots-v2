@@ -1,0 +1,17 @@
+{
+  "bar.customModules.updates.pollingInterval": 1440000,
+  "theme.font.name": "JetBrainsMono Nerd Font",
+  "theme.font.size": "1.0rem",
+  "theme.font.weight": 500,
+  "scalingPriority": "hyprland",
+  "theme.bar.scaling": 80,
+  "theme.notification.scaling": 80,
+  "theme.bar.floating": true,
+  "theme.bar.buttons.enableBorders": false,
+  "theme.bar.outer_spacing": "0.2em",
+  "theme.bar.layer": "top",
+  "theme.bar.dropdownGap": "2.6em",
+  "bar.workspaces.show_numbered": true,
+  "bar.workspaces.workspaces": 6,
+  "bar.windowtitle.class_name": true
+}

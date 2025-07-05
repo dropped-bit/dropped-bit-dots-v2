@@ -1,0 +1,46 @@
+# CATPPUCCIN THEMES
+import = ["~/.config/alacritty/themes/catppuccin/catppuccin-macchiato.toml"]
+
+# DRACULA THEME
+# import = ["~/.config/alacritty/themes/dracula/dracula.toml"]
+
+# ROSE-PINE THEME
+# import = ["~/.config/alacritty/themes/rose-pine/rose-pine.toml"]
+
+# GITHUB THEMES
+# import = ["~/.config/alacritty/themes/github/github_dark_default.toml"]
+# import = ["~/.config/alacritty/themes/github/github_dark.toml"]
+# import = ["~/.config/alacritty/themes/github/github_dark_dimmed.toml"]
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 18.0
+
+[font.bold]
+family = "JetBrainsMono Nerd Font"
+style = "bold"
+
+[font.bold_italic]
+family = "JetBrainsMono Nerd Font"
+style = "Bold Italic"
+
+[font.italic]
+family = "JetBrainsMono Nerd Font"
+style = "Italic"
+
+[font.normal]
+family = "JetBrainsMono Nerd Font"
+style = "Regular"
+
+[window]
+opacity = 0.8
+blur = true
+decorations = "None"
+
+[window.padding]
+x = 10
+y = 2
+
+

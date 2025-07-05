@@ -1,0 +1,7 @@
+# alias ls='exa --color=always --icons -1'
+# alias ll='exa --color=always --icons -all -1 --group'
+# alias tree='exa -T --icons'
+# alias vim='nvim'
+# alias nvim='nvim'
+# alias config='/usr/bin/git --git-dir=$HOME/Builds/dropped-bit-dots/ --work-tree=$HOME'
+# alias nmap='nvim ~/.config/nvim'

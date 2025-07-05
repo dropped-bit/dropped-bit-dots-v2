@@ -1,0 +1,101 @@
+# If installing on a new system, remember to install tpm
+# git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+# To install tpm and other plugins run '''prefix I''' so capital I
+
+set -g default-terminal "tmux-256color"
+set -ag terminal-overrides ",xterm-256color:RGB"
+set -g mouse on
+
+# Start windows and panes at 1, not 0
+set -g base-index 1
+set -g pane-base-index 1
+set-window-option -g pane-base-index 1
+set-option -g renumber-windows on
+
+
+# Set prefix
+unbind C-b
+set -g prefix C-Space
+bind C-Space send-prefix
+
+# Shift alt vim keys to switch windows
+bind -n M-H previous-window
+bind -n M-L next-window
+
+set -g status-position top # set bar position
+# Get tmux-continuum restoring automatically
+
+
+# Utils
+set -g @plugin 'tmux-plugins/tpm'
+# set -g @plugin 'catppuccin/tmux'
+set -g @plugin 'dracula/tmux'
+# set -g @plugin 'Nybkox/tmux-kanagawa'
+# set -g @plugin 'wfxr/tmux-power'
+set -g @plugin 'tmux-plugins/tmux-sensible'
+set -g @plugin 'christoomey/vim-tmux-navigator'
+set -g @plugin 'tmux-plugins/tmux-resurrect'
+set -g @plugin 'tmux-plugins/tmux-continuum'
+# set -g @plugin 'omerxx/tmux-sessionx' # session x plugin
+# set -g @sessionx-custom-paths '/home/holmes/dropped-bit-dots,/home/holmes/Projects/storefront,/home/holmes/.config/nvim' # set some custom paths in session x
+
+# Continuum and Ressurect Options
+set -g @continuum-restore 'on'
+set -g @resurrect-strategy-nvim 'session' # for neovim
+#THEMEING TMUX-POWER
+set -g @tmux_power_theme '#1612bb' # dark slate blue
+set -g @tmux_power_date_icon ' '
+set -g @tmux_power_time_icon ' '
+set -g @tmux_power_user_icon ' '
+set -g @tmux_power_session_icon ' '
+set -g @tmux_power_show_upload_speed    true
+set -g @tmux_power_show_download_speed  true
+set -g @tmux_power_show_web_reachable   true
+# set -g @tmux_power_right_arrow_icon     ''
+set -g @tmux_power_right_arrow_icon     ' '
+# set -g @tmux_power_left_arrow_icon      ''
+set -g @tmux_power_left_arrow_icon      ' '
+set -g @tmux_power_upload_speed_icon    '󰕒'
+set -g @tmux_power_download_speed_icon  '󰇚'
+set -g @tmux_power_prefix_highlight_pos 'R'
+
+
+# THEMING DRACULA
+set -g @dracula-show-powerline true
+set -g @dracula-plugins "time cpu-usage gpu-usage ram-usage battery"
+set -g @dracula-show-left-sep " "
+set -g @dracula-show-right-sep " "
+set -g @dracula-show-left-icon session # it can accept `hostname` (full hostname), `session`, `shortname` (short name), `smiley`, `window`, or any character.
+set -g @dracula-military-time true
+set -g @dracula-cpu-usage-colors "dark_gray pink"
+set -g @dracula-gpu-usage-colors "dark_gray pink"
+set -g @dracula-battery-colors "dark_gray pink"
+# THEMING CATPPUCCIN
+# set -g @catppuccin_flavour 'macchiato' # latte,frappe, macchiato or mocha
+# set -g @continuum-restore 'on'
+# set -g @resurrect-strategy-nvim 'session'
+# set -g @catppuccin_window_left_separator ""
+# set -g @catppuccin_window_right_separator " "
+# set -g @catppuccin_window_middle_separator " █"
+# set -g @catppuccin_window_number_position "right"
+# set -g @catppuccin_window_default_fill "number"
+# set -g @catppuccin_window_default_text "#W"
+# set -g @catppuccin_window_current_fill "number"
+# set -g @catppuccin_window_current_text "#W#{?window_zoomed_flag,(),}"
+# set -g @catppuccin_status_modules_right "directory date_time"
+# set -g @catppuccin_status_modules_left "session"
+# set -g @catppuccin_status_left_separator  " "
+# set -g @catppuccin_status_right_separator " "
+# set -g @catppuccin_status_right_separator_inverse "no"
+# set -g @catppuccin_status_fill "icon"
+# set -g @catppuccin_status_connect_separator "no"
+# set -g @catppuccin_directory_text "#{b:pane_current_path}"
+# set -g @catppuccin_date_time_text "%H:%M"
+# set -g @plugin 'dropped-bit/tmux-dropped-onedark-theme'
+# set -g @plugin 'wfxr/tmux-power'
+# set -g @tmux_power_theme 'violet'
+
+run '~/.tmux/plugins/tpm/tpm'
+
+bind '"' split-window -v -c "#{pane_current_path}"
+bind % split-window -h -c "#{pane_current_path}"

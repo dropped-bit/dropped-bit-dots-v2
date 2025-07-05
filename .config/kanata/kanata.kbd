@@ -1,0 +1,46 @@
+(deflocalkeys-winiov2 ;; not fully tested
+  -    191
+  ü    219
+  +    221
+  #    220
+  ß    189
+  ö    186
+  ^    192
+  ´    187
+  ä    222
+  <    188
+  y    90   
+  z    89
+)
+
+(defcfg
+    process-unmapped-keys yes
+)
+
+(defsrc
+;;    a s d f ; l k j caps
+  caps
+)
+
+(defvar
+    tap-time 300
+    hold-time 400
+)
+
+(defalias
+;;   a-mod (tap-hold $tap-time $hold-time a lmet)
+;;   s-mod (tap-hold $tap-time $hold-time s lalt)
+;;   d-mod (tap-hold $tap-time $hold-time d lsft)
+;;   f-mod (tap-hold $tap-time $hold-time f lctl)
+;;   ;-mod (tap-hold $tap-time $hold-time ; rmet)
+;;   l-mod (tap-hold $tap-time $hold-time l ralt)
+;;   k-mod (tap-hold $tap-time $hold-time k rsft)
+;;   j-mod (tap-hold $tap-time $hold-time j rctl)
+   escctrl (tap-hold $tap-time $hold-time esc lmet)
+)
+
+(deflayer base
+;;    @a-mod @s-mod @d-mod @f-mod
+;;    @;-mod @l-mod @k-mod @j-mod
+    @escctrl
+)

@@ -1,0 +1,60 @@
+# mdmap:
+#   - name: Default
+#     remap: # Required
+#       # Replace a key with another
+#       # CapsLock: Alt_L # Required
+#       CapsLock: SUPER_L # Required
+#
+# keymap:
+#   - name: MacCMD
+#     remap:
+#       # Keybindings
+#       SUPER-a: C-a # select all
+#       SUPER-c: C-c # copy
+#       SUPER-v: C-v # paste
+#       SUPER-x: C-x # cut
+#       # SUPER_L-b: C-b # bold
+#       SUPER-t: C-t # new tab
+#       # SUPER-KEY_TAB: C-KEY_TAB # cycle through tabs
+#       # SUPER-SHIFT_L-KEY_TAB: C-SHIFT_L-KEY_TAB # cycle-backwards through tabs
+#       SUPER-w: C-w # Close tab / window
+#       SUPER-r: C-r # Reload tab
+# keymap:
+#   - name: MacCMD
+#     remap:
+#       # Keybindings
+#       ALT-a: C-a # select all
+#       ALT-c: C-c # copy
+#       ALT-v: C-v # paste
+#       ALT-x: C-x # cut
+#       # ALT_L-b: C-b # bold
+#       ALT_L-t: C-t # new tab
+#       ALT_L-KEY_TAB: C-KEY_TAB # cycle through tabs
+#       ALT_L-SHIFT_L-KEY_TAB: C-SHIFT_L-KEY_TAB # cycle-backwards through tabs
+
+#       ALT_L-w: C-w # Close tab / window
+#
+modmap:
+  - name: "Modifier remaps"
+    remap:
+      # CapsLock:
+      #   hold_tap:
+      #     hold: Super_L
+      #     tap: Esc
+      Super_L: Control_L
+      Super_R: Control_R
+
+keymap:
+  - name: "macOS-style shortcuts"
+    remap:
+      Super-C: C-C
+      Super-V: C-V
+      Super-X: C-X
+      Super-Z: C-Z
+      Super-A: C-A
+      Super-F: C-F
+      Super-W: C-W
+      Super-T: C-T
+      Super-Tab: Alt-Tab
+      Super-Shift-Tab: Alt-Shift-Tab
+

@@ -1,0 +1,14 @@
+.DS_Store
+.config/envman
+.config/.DS_Store
+.config/tmux/plugins/*
+.config/zed/embeddings/*
+.config/zed/prompts/*
+.config/zed/keymap.json
+.config/zed/embeddings/semantic-index-db.0.mdb
+.config/zed/prompts/prompts-library-db.0.mdb
+.config/btop/
+.config/nvex/lazy-lock.json
+.config/nvim/.gitignore
+.config/nvim/lazy-lock.json
+.config/nvim/lazyvim.json
