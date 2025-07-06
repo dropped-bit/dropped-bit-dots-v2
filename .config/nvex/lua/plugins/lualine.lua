@@ -43,8 +43,7 @@ return {
       },
       sections = {
         lualine_a = { "mode" },
-        lualine_b = { "branch" },
-        lualine_c = {
+        lualine_b = {
           {
             'filetype',
             colored = true,             -- Displays filetype icon in color if set to true
@@ -54,62 +53,11 @@ return {
             -- icon =    {'X', align='right'}
             -- Icon string ^ in table is ignored in filetype component
           },
-
-          {
-            'filename',
-            file_status = true,     -- Displays file status (readonly status, modified status)
-            newfile_status = false, -- Display new file status (new file means no write after created)
-            path = 0,               -- 0: Just the filename
-            -- 1: Relative path
-            -- 2: Absolute path
-            -- 3: Absolute path, with tilde as the home directory
-            -- 4: Filename and parent dir, with tilde as the home directory
-
-            shorting_target = 40, -- Shortens path to leave 40 spaces in the window
-            -- for other components. (terrible name, any suggestions?)
-            symbols = {
-              modified = '●', -- Text to show when the file is modified.
-              readonly = '[]', -- Text to show when the file is non-modifiable or readonly.
-              unnamed = '[No Name]', -- Text to show for unnamed buffers.
-              newfile = '[New]', -- Text to show for newly created file before first write
-            },
-            padding = { left = 1, right = 0 },
-          },
-          -- {
-          --   "buffers",
-          -- },
-          -- {
-          --   symbols and symbols.get,
-          --   cond = function()
-          --     return vim.b.trouble_lualine ~= false and symbols.has()
-          --   end,
-          --   padding = { left = 1, right = 1 },
-          --   color = { bg = "#81c8be" },
-          -- },
-          "diagnostics",
-          -- {
-          --   "buffers",
-          --   show_filename_only = true,
-          --   show_modified_status = true,
-          --   symbols = {
-          --     modified = ' ●', -- Text to show when the buffer is modified
-          --     alternate_file = '', -- Text to show to identify the alternate file
-          --     directory = '', -- Text to show when the buffer is a directory
-          --   },
-          -- }
+          "diagnostics"
         },
-
+        lualine_c = {
+        },
         lualine_x = {
-          -- add status from noice (especially for showing macro recording in statusline)
-          -- {
-          --   require("noice").api.status.message.get_hl,
-          --   cond = require("noice").api.status.message.has,
-          -- },
-          -- {
-          --   require("noice").api.status.command.get,
-          --   cond = require("noice").api.status.command.has,
-          --   color = { fg = "#ff9e64" },
-          -- },
           {
             require("noice").api.status.mode.get,
             cond = require("noice").api.status.mode.has,
@@ -120,7 +68,6 @@ return {
             cond = require("noice").api.status.search.has,
             color = { fg = "#ff9e64" },
           },
-          "diff",
           {
             "lsp_status",
             icons_enabled = false,
@@ -136,14 +83,19 @@ return {
           },
         },
         lualine_y = {
-          { "progress", separator = " ",                  padding = { left = 1, right = 0 } },
-          { "location", padding = { left = 0, right = 1 } },
+          {
+            "progress",
+            separator = " ",
+            padding = { left = 1, right = 0 }
+          },
+          { "location", padding = { left = 0, right = 0 } },
+          {
+            "diff",
+            padding = { left = 0, right = 1 },
+          },
         },
         lualine_z = {
-          { function()
-            return " " .. os.date("%R")
-          end,
-          },
+          "branch",
         },
       },
     })
