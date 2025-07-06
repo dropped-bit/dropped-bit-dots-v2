@@ -323,7 +323,7 @@ main() {
         # "firefox" # browser
         "waybar" # bar
         "rofi-wayland"
-        # "nwg-look" # set gtk themes
+        "nwg-look" # set gtk themes
         # "libadwaita"
         "brightnessctl"
         "swaync" # notification center
