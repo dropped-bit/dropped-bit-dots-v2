@@ -358,8 +358,8 @@ main() {
         # ["./sys-files/etc/udev/rules.d/99-monitor-hotplug.rules"]="/etc/udev/rules.d/99-monitor-hotplug.rules"
         ["./sys-files/usr/share/applications/com.mitchellh.ghostty.desktop"]="/usr/share/applications/com.mitchellh.ghostty.desktop"
         ["./sys-files/.local/share/applications/dev.zed.Zed.desktop"]="$HOME/.local/share/applications/dev.zed.Zed.desktop"
-        # ["./sys-files/etc/modprobe.d/nvidia.conf"]="/etc/modprobe.d/nvidia.conf"
-        ["./sys-files/etc/modprobe.d/nvidia-disable.conf"]="/etc/modprobe.d/nvidia.conf"
+        ["./sys-files/etc/modprobe.d/nvidia.conf"]="/etc/modprobe.d/nvidia.conf"
+        # ["./sys-files/etc/modprobe.d/nvidia-disable.conf"]="/etc/modprobe.d/nvidia.conf"
         ["./sys-files/etc/modprobe.d/blacklist-nouveau.conf"]="/etc/modprobe.d/blacklist-nouveau.conf"
         ["./sys-files/etc/mkinitcpio.conf"]="/etc/mkinitcpio.conf"
     )
