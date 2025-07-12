@@ -311,9 +311,9 @@ main() {
         "cliphist" # clipboard manager
         "grim" # screenshots
         "slurp" # screenshots
-        # "network-manager-applet"
+        "network-manager-applet"
         # "gvfs"
-        # "blueman" # bluetooth
+        "blueman" # bluetooth
         # "bluez" # bluetooth
         # "polkit-gnome" # polkit
         # "font-manager"
