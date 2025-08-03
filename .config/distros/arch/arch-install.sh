@@ -287,9 +287,10 @@ main() {
         "ttf-roboto"
         "ghostty"
         "terminus-font"
-        "tlp"
+        # "tlp"
         # "noto-fonts"
         "nvidia"
+        # "nvidia-open-dkms"
         "cliphist"
         "gnome-keyring"
         "libsecret"
@@ -297,7 +298,7 @@ main() {
     )
 
     local yay_packages=(
-        "tlpui"
+        # "tlpui"
     )
 
     local hypr_packages=(
@@ -311,22 +312,22 @@ main() {
         "cliphist" # clipboard manager
         "grim" # screenshots
         "slurp" # screenshots
-        "network-manager-applet"
-        # "gvfs"
-        "blueman" # bluetooth
-        # "bluez" # bluetooth
+        # "network-manager-applet"
+        "gvfs"
+        # "blueman" # bluetooth
+        "bluez" # bluetooth
         # "polkit-gnome" # polkit
         # "font-manager"
         # "playerctl" # volume etc
         # "thunar" # file manager
         # "kitty" # terminal
-        # "firefox" # browser
+        "firefox" # browser
         "waybar" # bar
-        "rofi-wayland"
+        # "rofi-wayland"
         "nwg-look" # set gtk themes
         # "libadwaita"
         "brightnessctl"
-        "swaync" # notification center
+        # "swaync" # notification center
         # "gnome-bluetooth-3.0" # for ags bar
         # "libgtop" # required for resource monitoring modules
         # "dart-sass" # compiler for sass/scss
@@ -390,7 +391,7 @@ main() {
     # Configure services
     log "=== Configuring Services ==="
     enable_and_start_service "upower.service"
-    enable_and_start_service "tlp.service"
+    # enable_and_start_service "tlp.service"
     enable_and_start_service "ufw.service"
     enable_and_start_service "gnome-keyring-daemon.service" "true"
 

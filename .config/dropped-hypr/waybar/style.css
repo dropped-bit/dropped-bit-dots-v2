@@ -3,18 +3,18 @@
 * {
     font-family: JetBrainsMono Nerd Font;
     font-size: 14px;
-    min-height: 0;
+    min-height: 22px;
 }
 
 #waybar {
-    background: alpha(@base, 0.8);
+    background: alpha(@base, 0.65);
     /* background-image: linear-gradient( */
     /*   alpha(@overlay1, 0.1), */
     /*   alpha(@overlay1, 0.2) */
     /* ); */
     /* border-bottom: 2px solid alpha(white, 0.2); */
     color: @text;
-    margin: 4px 10px;
+    margin: 10px 10px;
 }
 
 #workspaces {
@@ -94,5 +94,5 @@
 }
 
 #taskbar button {
-    padding: 4px 4px;
+    padding: 0px 4px;
 }
