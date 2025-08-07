@@ -2,6 +2,20 @@
 if [[ -f "/opt/homebrew/bin/brew" ]] then
     eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
+
+
+# # launch hyprland
+# if uwsm check may-start && uwsm select; then
+# 	exec uwsm start default
+# fi
+
+# Only run Hyprland if this is TTY1 and not inside tmux
+if [[ $(tty) == /dev/tty1 && -z $TMUX ]]; then
+  if uwsm check may-start && uwsm select; then
+    exec uwsm start default
+  fi
+fi
+
 # Set the directory we want to store zinit and plugins
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 

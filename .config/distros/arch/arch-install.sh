@@ -283,18 +283,17 @@ main() {
         "flatpak"
         "libnotify"
         "ttf-jetbrains-mono"
-        "ttf-dejavu"
-        "ttf-roboto"
+        # "ttf-dejavu"
+        # "ttf-roboto"
         "ghostty"
         "terminus-font"
         # "tlp"
         # "noto-fonts"
         "nvidia"
         # "nvidia-open-dkms"
-        "cliphist"
         "gnome-keyring"
         "libsecret"
-        "upower"
+        # "upower"
     )
 
     local yay_packages=(
@@ -312,35 +311,37 @@ main() {
         "cliphist" # clipboard manager
         "grim" # screenshots
         "slurp" # screenshots
-        # "network-manager-applet"
         "gvfs"
-        # "blueman" # bluetooth
+	"mpv"
+	"blueberry" # bluetooth tui
         "bluez" # bluetooth
-        # "polkit-gnome" # polkit
+        "polkit-gnome" # polkit
         # "font-manager"
-        # "playerctl" # volume etc
-        # "thunar" # file manager
-        # "kitty" # terminal
-        "firefox" # browser
+        "playerctl" # volume etc
+        "thunar" # file manager
+        # "firefox" # browser
         "waybar" # bar
-        # "rofi-wayland"
         "nwg-look" # set gtk themes
-        # "libadwaita"
+        "libadwaita" # needed for gtk
         "brightnessctl"
-        # "swaync" # notification center
-        # "gnome-bluetooth-3.0" # for ags bar
+        "swaync" # notification center
         # "libgtop" # required for resource monitoring modules
-        # "dart-sass" # compiler for sass/scss
+	"btop"
+	"swayosd"
+	"uwsm" # https://wiki.hypr.land/Useful-Utilities/Systemd-start/
+	"libnewt" # https://wiki.hypr.land/Useful-Utilities/Systemd-start/
+	"impala" # TUI for managing wifi
+	"iwd" # Required for impala
     )
 
     local yay_hypr_packages=(
-        "hyprshot"
+        # "hyprshot"
         # "aylurs-gtk-shell"
         # "kanata" # keyboard modifier
     )
 
     local flatpak_packages=(
-        # "app.zen_browser.zen"
+        "app.zen_browser.zen"
         "md.obsidian.Obsidian"
         "com.github.tchx84.Flatseal"
         "com.spotify.Client"
@@ -358,11 +359,11 @@ main() {
         # ["./sys-files/etc/systemd/system/external_monitor.service"]="/etc/systemd/system/external_monitor.service"
         # ["./sys-files/etc/udev/rules.d/99-monitor-hotplug.rules"]="/etc/udev/rules.d/99-monitor-hotplug.rules"
         ["./sys-files/usr/share/applications/com.mitchellh.ghostty.desktop"]="/usr/share/applications/com.mitchellh.ghostty.desktop"
-        ["./sys-files/.local/share/applications/dev.zed.Zed.desktop"]="$HOME/.local/share/applications/dev.zed.Zed.desktop"
+        # ["./sys-files/.local/share/applications/dev.zed.Zed.desktop"]="$HOME/.local/share/applications/dev.zed.Zed.desktop"
         ["./sys-files/etc/modprobe.d/nvidia.conf"]="/etc/modprobe.d/nvidia.conf"
-        # ["./sys-files/etc/modprobe.d/nvidia-disable.conf"]="/etc/modprobe.d/nvidia.conf"
+        ["./sys-files/etc/modprobe.d/nvidia-disable.conf"]="/etc/modprobe.d/nvidia.conf"
         ["./sys-files/etc/modprobe.d/blacklist-nouveau.conf"]="/etc/modprobe.d/blacklist-nouveau.conf"
-        ["./sys-files/etc/mkinitcpio.conf"]="/etc/mkinitcpio.conf"
+        # ["./sys-files/etc/mkinitcpio.conf"]="/etc/mkinitcpio.conf"
     )
 
     # Install packages
@@ -390,16 +391,21 @@ main() {
 
     # Configure services
     log "=== Configuring Services ==="
-    enable_and_start_service "upower.service"
+    # enable_and_start_service "upower.service"
     # enable_and_start_service "tlp.service"
     enable_and_start_service "ufw.service"
-    enable_and_start_service "gnome-keyring-daemon.service" "true"
+    enable_and_start_service "gnome-keyring-daemon.service" "true" # true means a user service is envoked
+    enable_and_start_service "swayosd-libinput-backend.service" 
+    enable_and_start_service "systemd-resolved" # DNS for iwd
+    enable_and_start_service "iwd" # needed for impala 
+
 
     # Configure firewall
     log "=== Configuring Firewall ==="
     sudo ufw --force default deny incoming
     sudo ufw --force default allow outgoing
     sudo ufw --force default deny routed
+    sudo ufw enable
 
     # Rebuild initramfs
     log "=== Rebuilding Initramfs ==="

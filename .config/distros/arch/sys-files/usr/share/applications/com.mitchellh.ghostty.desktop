@@ -2,7 +2,7 @@
 Name=Ghostty
 Type=Application
 Comment=A terminal emulator
-Exec=ghostty --config-file=./.config/ghostty/config-linux
+Exec=ghostty --config-file=$HOME/.config/ghostty/config-linux
 Icon=com.mitchellh.ghostty
 Categories=System;TerminalEmulator;
 Keywords=terminal;tty;pty;
