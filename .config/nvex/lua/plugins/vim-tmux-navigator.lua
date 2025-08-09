@@ -1,5 +1,5 @@
 return {
-  enabled = false,
+  enabled = true,
   "christoomey/vim-tmux-navigator",
   cmd = {
     "TmuxNavigateLeft",

@@ -7,16 +7,25 @@ return {
       bottom_search = true,
       command_palette = false,
       long_message_to_split = true,
-      lsp_doc_border = false,
+      lsp_doc_border = true,
     },
     cmdline = {
       enabled = true,
       view = "cmdline",
     },
     lsp = {
+      hover = {
+        enabled = false, -- just in case
+      },
+
       signature = {
-        enabled = true
-      }
+        enabled = true,
+        border = { style = "rounded" },
+        show_documentation = false,
+      },
+      documentation = {
+        enabled = false, -- Completely disable documentation popups
+      },
     }
   },
   config = function(_, opts)
@@ -25,8 +34,8 @@ return {
     -- Custom highlight overrides
     local hl = vim.api.nvim_set_hl
     hl(0, "NoicePopup", { bg = "#292c3c" })
-    -- hl(0, "NoicePopupBorder", { fg = "#89b4fa" })
+    -- -- hl(0, "NoicePopupBorder", { fg = "#89b4fa" })
     hl(0, "NoicePopupmenu", { bg = "#292c3c" })
-    -- hl(0, "NoicePopupmenuSelected", { bg = "#313244", fg = "#cdd6f4" })
+    -- -- hl(0, "NoicePopupmenuSelected", { bg = "#313244", fg = "#cdd6f4" })
   end,
 }

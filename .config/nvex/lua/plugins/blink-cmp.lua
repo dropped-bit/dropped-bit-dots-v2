@@ -18,30 +18,33 @@ return {
     -- 'enter' for mappings similar to 'super-tab' but with 'enter' to accept
     -- See the full "keymap" documentation for information on defining your own keymap.
     keymap = {
-      preset = 'none',
-      ['<C-space>'] = { 'show', 'show_documentation', 'hide_documentation' },
-      ['<C-e>'] = { 'hide' },
-      ['<C-y>'] = { 'select_and_accept' },
-
-      ['<Up>'] = { 'select_prev', 'fallback' },
-      ['<Down>'] = { 'select_next', 'fallback' },
-      ['<C-p>'] = { 'select_prev', 'fallback_to_mappings' },
-      ['<C-n>'] = { 'select_next', 'fallback_to_mappings' },
-
-      ['<C-b>'] = { 'scroll_documentation_up', 'fallback' },
-      ['<C-f>'] = { 'scroll_documentation_down', 'fallback' },
-
-      ['<Tab>'] = { 'snippet_forward', 'fallback' },
-      ['<S-Tab>'] = { 'snippet_backward', 'fallback' },
-
-      ['<C-k>'] = { 'show_signature', 'hide_signature', 'fallback' },
+      preset = 'default',
+      -- ['<C-space>'] = { 'show', 'show_documentation', 'hide_documentation' },
+      -- ['<C-e>'] = { 'hide' },
+      -- ['<C-y>'] = { 'select_and_accept' },
+      --
+      -- ['<Up>'] = { 'select_prev', 'fallback' },
+      -- ['<Down>'] = { 'select_next', 'fallback' },
+      -- ['<C-p>'] = { 'select_prev', 'fallback_to_mappings' },
+      -- ['<C-n>'] = { 'select_next', 'fallback_to_mappings' },
+      --
+      -- ['<C-b>'] = { 'scroll_documentation_up', 'fallback' },
+      -- ['<C-f>'] = { 'scroll_documentation_down', 'fallback' },
+      --
+      -- ['<Tab>'] = { 'snippet_forward', 'fallback' },
+      -- ['<S-Tab>'] = { 'snippet_backward', 'fallback' },
+      --
+      -- ['<C-k>'] = { 'show_signature', 'hide_signature', 'fallback' },
 
     },
 
     -- Blink supports signature help, automatically triggered when typing trigger characters, defined by the LSP, such as ( for lua. The menu will be updated when pressing a retrigger character, such as ,. Due to it being experimental, this feature is opt-in.
     signature = {
       enabled = true,
-      window = { border = "none" }
+      window = {
+        border = "rounded",
+        show_documentation = false
+      }
     },
 
     completion = {
@@ -56,7 +59,7 @@ return {
       documentation = {
         auto_show = false,
         auto_show_delay_ms = 500,
-        window = { border = "none" },
+        window = { border = "rounded" },
       }
     },
     appearance = {

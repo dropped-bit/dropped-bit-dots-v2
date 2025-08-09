@@ -35,15 +35,9 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   end,
 })
 
--- border on diagnostics
+-- Diagnostics border
 vim.diagnostic.config({
   float = {
     border = "rounded",
   },
 })
-
--- border on hover window
-vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
-  vim.lsp.handlers.hover,
-  { border = "single" }
-)
