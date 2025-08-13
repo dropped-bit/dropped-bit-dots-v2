@@ -14,17 +14,9 @@ return {
       view = "cmdline",
     },
     lsp = {
-      hover = {
-        enabled = false, -- just in case
-      },
-
       signature = {
-        enabled = true,
+        enabled = false,
         border = { style = "rounded" },
-        show_documentation = false,
-      },
-      documentation = {
-        enabled = false, -- Completely disable documentation popups
       },
     }
   },

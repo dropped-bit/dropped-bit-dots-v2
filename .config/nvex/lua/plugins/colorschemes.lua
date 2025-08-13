@@ -6,6 +6,9 @@ return {
     config = function()
       require("catppuccin").setup({
         transparent_background = true,
+        float = {
+          transparent = true,
+        },
         styles = {
           comments = { "altfont" },
         },

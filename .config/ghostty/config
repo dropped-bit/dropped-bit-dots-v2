@@ -14,5 +14,5 @@ shell-integration-features = no-cursor
 macos-option-as-alt = left
 background = "#24273a"
 # background = "#000000"
-background-opacity = 0.90
+background-opacity = 0.98
 background-blur = true

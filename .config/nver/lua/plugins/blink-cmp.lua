@@ -82,13 +82,13 @@ return {
     -- Default list of enabled providers defined so that you can extend it
     -- elsewhere in your config, without redefining it, due to `opts_extend`
     sources = {
-      default = { 'lsp', 'path', 'snippets', 'buffer', 'markdown' },
+      default = { 'lsp', 'path', 'snippets', 'buffer' },
       providers = {
-        markdown = {
-          name = 'RenderMarkdown',
-          module = 'render-markdown.integ.blink',
-          fallbacks = { 'lsp' },
-        },
+        -- markdown = {
+        --   name = 'RenderMarkdown',
+        --   module = 'render-markdown.integ.blink',
+        --   fallbacks = { 'lsp' },
+        -- },
       },
     },
   },
@@ -96,7 +96,8 @@ return {
   config = function(_, opts)
     require("blink.cmp").setup(opts)
     -- Highlight override for cmp menu background
-    vim.api.nvim_set_hl(0, "BlinkCmpMenu", { bg = "#292c3c" })
+    vim.api.nvim_set_hl(0, "BlinkCmpMenu", { fg = "#cdd6f4" })                          -- catppuccin-mocha bg.surface0, fg.text
+    vim.api.nvim_set_hl(0, "BlinkCmpMenuSelection", { bg = "#cba6f7", fg = "#1e1e2e" }) -- catppuccin-mocha bg.mauve, fg.base
     -- vim.api.nvim_set_hl(0, "BlinkCmpDoc", { bg = "#292c3c" })
     -- vim.api.nvim_set_hl(0, "BlinkCmpSignatureHelp", { bg = "#292c3c" })
   end,
