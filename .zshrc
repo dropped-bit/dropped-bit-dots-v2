@@ -1,21 +1,23 @@
-# If you're using macOS, you'll want this enabled
+##########################
+# SOURCE HOMEBREW ON MAC #
+##########################
 if [[ -f "/opt/homebrew/bin/brew" ]] then
     eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
-
-# # launch hyprland
-# if uwsm check may-start && uwsm select; then
-# 	exec uwsm start default
-# fi
-
-# Only run Hyprland if this is TTY1 and not inside tmux
+###########################
+# USE UWSM TO LAUNCH HYPR #
+###########################
 if [[ $(tty) == /dev/tty1 && -z $TMUX ]]; then
   if uwsm check may-start && uwsm select; then
     exec uwsm start default
   fi
 fi
 
+
+###########################
+# ZINIT STUFF #
+###########################
 # Set the directory we want to store zinit and plugins
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
@@ -28,13 +30,6 @@ fi
 # Source/Load zinit
 source "${ZINIT_HOME}/zinit.zsh"
 
-# Source Cargo
-export PATH="$PATH:$HOME/.cargo"
-export PATH="$PATH:$HOME/.cargo/bin"
-export PATH="$PATH:$HOME/.local/bin"
-export PATH="$PATH:/Applications/Docker.app/Contents/Resources/bin/"
-# Add in Powerlevel10k
-# zinit ice depth=1; zinit light romkatv/powerlevel10k
 
 # Add in zsh plugins
 zinit light zsh-users/zsh-syntax-highlighting
@@ -57,28 +52,18 @@ autoload -Uz compinit && compinit
 
 zinit cdreplay -q
 
-# Enable VIM mode:
-# set -o vi
-
-# Aliases
-alias vim='nvim'
-alias c='clear'
-alias ls='eza --color=always --icons --long'
-alias ll='eza --color=always --icons --long --all'
-alias tree='eza --color=always --icons --long --all --tree --level=3'
-# alias cat='bat'
-alias os='fastfetch -c $HOME/.config/fastfetch/fastfetch.jsonc'
-alias nvex='NVIM_APPNAME=nvex nvim'
-alias nver='NVIM_APPNAME=nver nvim'
-alias dropped-config='nvex $HOME/.config/distros/arch-install.sh'
-alias dropped-update='$HOME/.config/distros/arch/arch-install.sh'
-alias zd='ZED_DEVICE_ID=0xa7a0 /home/holmes/.local/zed.app/bin/zed'
+###########################
+# SHELL GRAVY #
+###########################
 
 # Keybindings
-bindkey -e
+# bindkey -e # ENABLE EMACS MDE
+bindkey -v # ENABLE VIM MODE
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 bindkey '^[w' kill-region
+bindkey -s ^f "tmux-sessionizer\n"
+
 
 # History
 HISTSIZE=5000
@@ -93,6 +78,11 @@ setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
 
+# If fzf is installed
+# Search command history with Ctrl+R
+export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --border"
+bindkey '^R' fzf-history-widget
+
 # Completion styling
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
@@ -100,29 +90,16 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa --color=always --icons $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'exa --color=always --icons $realpath'
 
-
 # Shell integrations
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 
-
 # Set Starship Promt
 eval "$(starship init zsh)"
 
-# Set Oh-My-Posh Prompt
-# eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/zen.toml)"
-
-# Source zsh.alias
-# source $HOME/.zsh_aliases
-
-# Interactive fish
-# exec fish
-alias kde='$HOME/.config/scripts/launch_kde.sh'
-export GTK_THEME=adw-gtk3-dark:dark
-alias hyp='Hyprland'
-
-# ENV for Nix Config
-export NIX_CONF_DIR=/Users/holmes_a9/.config/nix
+###########################
+# EXPORT AND SOURCE #
+###########################
 
 # bun completions
 [ -s "/home/holmes/.bun/_bun" ] && source "/home/holmes/.bun/_bun"
@@ -136,4 +113,31 @@ export "PATH=$PATH:$HOME/.local/opt/go/bin"
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 
+# Source Cargo
+export PATH="$PATH:$HOME/.cargo"
+export PATH="$PATH:$HOME/.cargo/bin"
+export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:/Applications/Docker.app/Contents/Resources/bin/"
+
+###########################
+# SOURCE SOME SAUCY STUFF #
+###########################
 source $HOME/.api/avante_anthropic_api
+
+###########################
+# ALIASES #
+###########################
+# Aliases
+alias vim='nvim'
+alias c='clear'
+alias ls='eza --color=always --icons --long'
+alias ll='eza --color=always --icons --long --all'
+alias tree='eza --color=always --icons --long --all --tree --level=3'
+# alias cat='bat'
+alias os='fastfetch -c $HOME/.config/fastfetch/fastfetch.jsonc'
+alias nvex='NVIM_APPNAME=nvex nvim'
+alias nver='NVIM_APPNAME=nver nvim'
+alias dropped-config='nvex $HOME/.config/distros/arch-install.sh'
+alias dropped-update='$HOME/.config/distros/arch/arch-install.sh'
+alias zd='ZED_DEVICE_ID=0xa7a0 /home/holmes/.local/zed.app/bin/zed'
+alias hyp='Hyprland'
