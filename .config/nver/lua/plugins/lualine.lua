@@ -20,13 +20,13 @@ return {
     -- custom_auto.normal.a.bg = '#112233'
     -- custom_auto.normal.b.bg = '#112233'
     -- custom_auto.normal.c.bg = '#292c3c' -- only add this using frappe
-    custom_auto.normal.c.bg = '#181926' -- only add this using mocha
+    -- custom_auto.normal.c.bg = '#181926' -- only add this using mocha
     -- custom_auto.normal.c.bg = 'NONE' -- only use this if wanting a transparent background
 
     lualine.setup({
 
       options = {
-        theme = custom_auto,
+        -- theme = custom_auto,
         section_separators = { left = "", right = "" },
         component_separators = { left = "", right = "" },
         disabled_filetypes = {},
