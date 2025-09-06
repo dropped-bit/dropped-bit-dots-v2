@@ -1,7 +1,7 @@
 @import "../omarchy/current/theme/waybar.css";
 
 * {
-  background-color: @background;
+  background-color: alpha(#1e1e2e, 0.8);
   color: @foreground;
 
   border: none;
@@ -36,8 +36,8 @@
 #network,
 #bluetooth,
 #pulseaudio,
-#custom-omarchy,
-#custom-update {
+#clock,
+#custom-omarchy {
   min-width: 12px;
   margin: 0 7.5px;
 }
@@ -48,16 +48,4 @@
 
 tooltip {
   padding: 2px;
-}
-
-#custom-update {
-  font-size: 10px;
-}
-
-#clock {
-  margin-left: 8.75px;
-}
-
-.hidden {
-  opacity: 0;
 }
